@@ -1,0 +1,12 @@
+单元测试
+        <!-- 测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+类上加
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = XXXApp.class)
+方法上加
+@Test

@@ -1,0 +1,21 @@
+vim 命令模式u 撤销
+
+查看IP     ip addr show eth0
+
+Docker复制文件
+docker cp [OPTIONS] container:src_path dest_path
+docker cp [OPTIONS] dest_path container:src_path 
+
+docker中 启动所有的容器命令       docker start $(docker ps -a | awk '{ print $1}' | tail -n +2)
+docker中    关闭所有的容器命令     docker stop $(docker ps -a | awk '{ print $1}' | tail -n +2)
+
+解压tar.gz    命令 tar xfz xxx.tar.gz
+
+pwd显示当前路径
+
+设置新的环境变量，全用户有效
+vi /etc/profile 在文件末尾加上如下两行代码 
+PATH=$PATH:/usr/local/MATLAB/R2013a/bin 
+export PATH
+最后执行命令 source /etc/profile
+

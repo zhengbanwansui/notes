@@ -1,0 +1,37 @@
+【判空】
+typeof(name)=="undefined"?
+
+路由跳转
+【开启新页面】
+      let routeData = this.$router.resolve({
+        path: "/personal",
+        query: {
+          activeName: "fifth"
+        }
+      });
+      window.open(routeData.href, "_blank");
+【旧页面跳转】
+this.$router.push({
+        path:"/detail",
+        query:{personId:33}
+})
+【跳转后获取参数】
+this.$route.query.xxxxxx
+
+Map的用法
+var m = new Map(); // 空Map
+m.set('Adam', 67); // 添加新的key-value
+m.set('Bob', 59);
+m.has('Adam'); // 是否存在key 'Adam': true
+m.get('Adam'); // 67
+m.delete('Adam'); // 删除key 'Adam'
+m.get('Adam'); // undefined
+
+Map转普通Object对象
+_strMapToObj(strMap){
+    let obj= Object.create(null);
+    for (let[k,v] of strMap) {
+      obj[k] = v;
+    }
+    return obj;
+  }

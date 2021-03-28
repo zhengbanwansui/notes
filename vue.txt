@@ -1,0 +1,1 @@
+V-FOR使用方法，渲染性能低    <div v-for="(item,index) in list :key="index">{{item.name}}</div>

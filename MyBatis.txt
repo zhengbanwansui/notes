@@ -1,0 +1,10 @@
+#{} 防注入，外加单引号
+${} 不能防注入，单纯拼接
+
+自增注解什么时候用    @Options(useGeneratedKeys=true, keyProperty="id", keyColumn="id")
+除主键外一一对应则不需要加自增注解    INSERT INTO `order`(userId,time,money) VALUES (#{userId}, #{time}, #{money})
+values中列出全部属性时需要加自增注解    INSERT INTO `order` VALUES (#{id}, #{userId}, #{time}, #{money} )【常用】
+
+Date类型    已支持
+LocalDateTime类型    已支持【新版】
+

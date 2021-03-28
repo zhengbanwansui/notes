@@ -1,0 +1,2 @@
+Feign接口要加上requestParam和requestBody，不加会有参数数量错误
+

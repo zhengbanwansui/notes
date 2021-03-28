@@ -1,0 +1,70 @@
+集合只能存储引用类型，不固定长度
+Collection接口
+包括子接口List和Set和Queue
+List包括ArrayList，LinkedList，Vector
+Set包括HashSet，TreeSet
+Queue包括Deque双端队列，BlockingQueue阻塞队列，AbstractQueue非阻塞队列
+ArrayList源码分析：
+新建ArrayList对象，0容量
+add 10容量
+添加第11个元素的时候扩容到15个，然后后面在需要扩容都扩容这个比例
+
+Vector 数组结构实现（和ArrayList相比线程安全）
+
+LinkedList源码分析：
+双向链表
+
+set集合，无序，无下标，元素无重复（重复添加不报错，但是不存储）
+
+HashSet<T>
+哈希表+链表（元素多时链表转为红黑树，元素少时红黑树转为链表）
+【hashCode方法默认根据对象的地址来生成一个随机整数】
+【equals方法默认根据对象地址是否相同来计算】
+【泛型T是对象时】
+只重写hashCode，导入同一格hash表，但是equals为false，所以以链表形式存到同一格
+只重写equals，导入不同格hash表，肯定能存进去
+所以必须重写hashCode和equals两个方法，才能保证HashSet正常使用
+【泛型T是基本数据类型的包装类或String，JDK已经写好了hashCode和equals】
+equal则hashCode一定相同
+hashCode相同不一定equal，可能不同类
+【equals是真正意义上的相等,hashcode只是一个参考】
+
+TreeSet<T>基于排序实现元素不重复，红黑树实现
+泛型T必须实现Comparable接口，TreeSet通过CompareTo方法实现是否为重复元素
+
+【Map接口】包括两个实现，HashMap和实现了SortedMap接口的TreeMap，接口结构类似于set
+
+HashMap线程不安全
+LoadFactor加载因子0.75，超过这个容量就扩容
+链表长度>8元素个数>=64 将这个链表变为红黑树
+红黑树长度<6变回链表
+table是hash表数组
+size是元素个数
+HashMap的一个元素是一个node，包括key，value，next，hash
+HashMap的构造方法：
+无参构造，默认参数
+有参构造，可以调节初始容量和加载因子
+以另一个Map对象创建HashMap
+
+创建HashMap对象后，table=null size=0
+扩容首次16，后面每次x2
+链表是尾插入
+
+HashSet和HashMap的关系？
+HashSet用的就是HashMap的KEY
+
+HashTable线程安全不允许出现null的k，v
+子类Properties要求kv都是String，通常用于配置文件读取
+
+TreeMap实现了SortedMap接口，可以排序，红黑树
+
+Collections集合工具类 reverse反转 shuffle打乱 sort排序 BinarySearch查找
+
+Arrays.asList(数组)
+list.toArray(new 数组[0])
+
+
+
+
+
+
