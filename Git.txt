@@ -1,7 +1,7 @@
 【开启vpn后设置代理】
 只需要第一句
 git config --global http.proxy 127.0.0.1:4780
-git config --global https.proxy 127.0.0.1:4780
+# git config --global https.proxy 127.0.0.1:4780
 【取消设置】
 git config --global --unset http.proxy
-git config --global --unset https.proxy
+# git config --global --unset https.proxy
