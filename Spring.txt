@@ -1,2 +1,10 @@
 singleton是单例
 prototype是多例，只有当类需要非静态域的时候才使用多例
+
+@Qualifier("xxx_name")
+@Autowired
+
+@Resource(name="xxx_name")
+
+
+

@@ -1,3 +1,12 @@
+ArrayList默认10一次扩容x1.5
+HashMap默认16一次扩容x2
+
+IO部分没学    【Java 中 IO 流】
+
+线程6状态 初始、运行、阻塞、等待、超时等待、终止
+
+String源码：private final char value[] 所以string不可变
+
 深拷贝实现方式：实现Cloneable接口、实现Serilizable接口
 
 lambda表达式（简化匿名内部类）

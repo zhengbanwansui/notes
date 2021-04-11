@@ -1,3 +1,14 @@
+安装阿尔萨斯 
+下载安装包curl -O https://arthas.aliyun.com/arthas-boot.jar
+安装java -jar arthas-boot.jar --repo-mirror aliyun --use-http
+安完后，命令dashboard查看监控
+
+查找Java路径ls -lrt /usr/bin/java
+
+查看Java进程ps -ef | grep java
+
+./当前目录 ../上级目录 /根目录
+
 vim 命令模式u 撤销
 
 查看IP     ip addr show eth0
@@ -8,6 +19,20 @@ docker cp [OPTIONS] dest_path container:src_path
 
 docker中 启动所有的容器命令       docker start $(docker ps -a | awk '{ print $1}' | tail -n +2)
 docker中    关闭所有的容器命令     docker stop $(docker ps -a | awk '{ print $1}' | tail -n +2)
+
+【Docker增加对外公开的端口】
+systemctl stop docker
+docker inspect 容器名 | grep Id
+cd /var/lib/docker/containers/查找到的id名文件夹
+这个文件夹下
+修改hostconfig.json的PortBindings
+修改config.v2.json的ExposedPorts
+systemctl start docker
+
+【docker修改文件】
+
+
+Docker底层实现，进程隔离namespace，文件隔离mount命令挂载， cGroup配置限制性能
 
 解压tar.gz    命令 tar xfz xxx.tar.gz
 
